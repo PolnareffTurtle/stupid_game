@@ -1,0 +1,15 @@
+{ "columns":4,
+ "image":"images\/spritesheet.png",
+ "imageheight":32,
+ "imagewidth":128,
+ "margin":0,
+ "name":"presidents",
+ "spacing":0,
+ "tilecount":4,
+ "tiledversion":"1.11.0",
+ "tileheight":32,
+ "tilewidth":32,
+ "transparentcolor":"#ff00ff",
+ "type":"tileset",
+ "version":"1.10"
+}

@@ -1,2 +1,1 @@
-I LIKE MEN
-yechan park.
+hello ming.
