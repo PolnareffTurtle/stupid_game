@@ -25,56 +25,11 @@ class Game:
         }
         self.player = Player(self, [0, 0])
 
-<<<<<<< HEAD
         #music
         pygame.mixer.init()
         pygame.mixer.music.load('assets/anthem.mp3')  # Replace with your actual file
         pygame.mixer.music.play(loops=-1)  # Loop indefinitely
         pygame.mixer.music.set_volume(0.5)  # Adjust volume (0.0 to 1.0)
-=======
-    def game_won(self):
-        while self.gamestate == Game.GAME_WON:
-            self.display.fill((0, 0, 0))
-            Text("you won\nthe game", 120, 'white', (30, 30)).render(self.display)
-
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    exit()
-                if event.type == pygame.KEYDOWN:
-                    if event.key in [pygame.K_RETURN, pygame.K_KP_ENTER]:
-                        self.level = 1
-                        self.gamestate = Game.GAME_RUNNING
-                    """if event.key == pygame.K_ESCAPE:
-                        self.gamestate = Game.LEVEL_SELECT
-                        await self.transition_out()"""
-
-            self.clock.tick(60)
-            pygame.display.update()
-            self.screen.blit(pygame.transform.scale(self.display, self.screen.get_size()), (0, 0))
-
-
-    def game_menu(self):
-        while self.gamestate == Game.GAME_MENU:
-            self.display.fill((0,0,0))
-            Text("This is \nlevel "+str(self.level),120,'white',(30,30)).render(self.display)
-
-
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    exit()
-                if event.type == pygame.KEYDOWN:
-                    if event.key in [pygame.K_RETURN, pygame.K_KP_ENTER]:
-                        self.gamestate = Game.GAME_RUNNING
-                    """if event.key == pygame.K_ESCAPE:
-                        self.gamestate = Game.LEVEL_SELECT
-                        await self.transition_out()"""
-
-            self.clock.tick(60)
-            pygame.display.update()
-            self.screen.blit(pygame.transform.scale(self.display, self.screen.get_size()), (0, 0))
->>>>>>> 0a62ab6051f75e7a7613579059b97a997d6fd247
 
     def game_running(self):
         self.tilemap = Tilemap(self,self.level)
