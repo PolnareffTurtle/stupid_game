@@ -20,6 +20,12 @@ class Game:
         }
         self.player = Player(self, [0, 0])
 
+        #music
+        pygame.mixer.init()
+        pygame.mixer.music.load('assets/anthem.mp3')  # Replace with your actual file
+        pygame.mixer.music.play(loops=-1)  # Loop indefinitely
+        pygame.mixer.music.set_volume(0.5)  # Adjust volume (0.0 to 1.0)
+
     def game_running(self):
         self.tilemap = Tilemap(self,self.level)
         self.movement[0] = False
