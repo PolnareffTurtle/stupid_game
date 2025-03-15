@@ -23,7 +23,8 @@ class Game:
             'player':load_images('player'),
             'background':load_image('america.jpg'),
             'tiles':load_images('tiles'),
-            'sound_effect': pygame.mixer.Sound("assets/explosion.mp3")
+            'sound_effect': pygame.mixer.Sound("assets/explosion.mp3"),
+            'sound_effect2': pygame.mixer.Sound("assets/eagle.mp3"),
         }
         self.player = Player(self, [0, 0])
         pygame.mixer.init()
@@ -113,6 +114,7 @@ class Game:
                 self.gamestate = Game.GAME_RUNNING
                 break
             elif self.gamestate == Game.WIN:
+                self.assets['sound_effect2'].play()
                 if self.level == 6:
                     self.gamestate = Game.GAME_WON
                     break
