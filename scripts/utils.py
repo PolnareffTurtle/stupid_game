@@ -18,3 +18,17 @@ def load_images(path,alpha=False):
             continue
         images.append(load_image(path + '/' + img_name, alpha))
     return images
+
+
+class Text:
+    def __init__(self,text,size,color,pos):
+        self.texts = text.split('\n')
+        self.color = color
+        self.pos = pos
+        self.size = size
+        self.font = pygame.font.Font('assets/fonts/RusticRoadway.otf',self.size)
+        self.images = [self.font.render(text,True,color) for text in self.texts]
+
+    def render(self,surf,offset=(0,0)):
+        for i in range(len(self.images)):
+            surf.blit(self.images[i],(self.pos[0]-offset[0],int(self.size*i*1.2) + (self.pos[1]-offset[1])))
